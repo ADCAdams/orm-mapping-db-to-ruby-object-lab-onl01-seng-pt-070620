@@ -15,6 +15,8 @@ class Student
     # remember each row should be a new instance of the Student class
   end
 
+
+
   def self.find_by_name(name)
     # find the student in the database given a name
     # return a new instance of the Student class
@@ -31,6 +33,7 @@ class Student
     end.first
   end
   
+  
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade) 
@@ -39,6 +42,8 @@ class Student
 
     DB[:conn].execute(sql, self.name, self.grade)
   end
+  
+  
   
   def self.create_table
     sql = <<-SQL
